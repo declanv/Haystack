@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      render :json=> {:success=>true, :email=>@user.email}
+      render :json=> {:success=>true, :email=>@user.email, :id=>@user.id}
     else
       render :json=> {:success=>false}
     end
