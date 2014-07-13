@@ -3,26 +3,28 @@ Rails.application.routes.draw do
   get "log_in" => "sessions#create", :as => "log_in"
   get "sign_up" => "users#create", :as => "sign_up"
   resources :users
-  resources :sessions
+  resources :maps
+  resources :sessions, only: [:create]
 end
 
-#       Prefix Verb   URI Pattern                  Controller#Action
-#      log_out GET    /log_out(.:format)           sessions#destroy
-#       log_in GET    /log_in(.:format)            sessions#new
-#      sign_up GET    /sign_up(.:format)           users#new
-#        users GET    /users(.:format)             users#index
-#              POST   /users(.:format)             users#create
-#     new_user GET    /users/new(.:format)         users#new
-#    edit_user GET    /users/:id/edit(.:format)    users#edit
-#         user GET    /users/:id(.:format)         users#show
-#              PATCH  /users/:id(.:format)         users#update
-#              PUT    /users/:id(.:format)         users#update
-#              DELETE /users/:id(.:format)         users#destroy
-#     sessions GET    /sessions(.:format)          sessions#index
-#              POST   /sessions(.:format)          sessions#create
-#  new_session GET    /sessions/new(.:format)      sessions#new
-# edit_session GET    /sessions/:id/edit(.:format) sessions#edit
-#      session GET    /sessions/:id(.:format)      sessions#show
-#              PATCH  /sessions/:id(.:format)      sessions#update
-#              PUT    /sessions/:id(.:format)      sessions#update
-#              DELETE /sessions/:id(.:format)      sessions#destroy
+#   log_out GET    /log_out(.:format)        sessions#destroy
+#    log_in GET    /log_in(.:format)         sessions#create
+#   sign_up GET    /sign_up(.:format)        users#create
+#     users GET    /users(.:format)          users#index
+#           POST   /users(.:format)          users#create
+#  new_user GET    /users/new(.:format)      users#new
+# edit_user GET    /users/:id/edit(.:format) users#edit
+#      user GET    /users/:id(.:format)      users#show
+#           PATCH  /users/:id(.:format)      users#update
+#           PUT    /users/:id(.:format)      users#update
+#           DELETE /users/:id(.:format)      users#destroy
+#      maps GET    /maps(.:format)           maps#index
+#           POST   /maps(.:format)           maps#create
+#   new_map GET    /maps/new(.:format)       maps#new
+#  edit_map GET    /maps/:id/edit(.:format)  maps#edit
+#       map GET    /maps/:id(.:format)       maps#show
+#           PATCH  /maps/:id(.:format)       maps#update
+#           PUT    /maps/:id(.:format)       maps#update
+#           DELETE /maps/:id(.:format)       maps#destroy
+#  sessions POST   /sessions(.:format)       sessions#create
+

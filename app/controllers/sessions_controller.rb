@@ -14,6 +14,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    render :json => {:success=>true}
+    render :json => {:success=>true}, :status=>204
   end
 end
