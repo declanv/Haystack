@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      render :json=> {:success=>true, :email=>user.email}
+      render :json=> {:success=>true, :email=>user.email}, :status=>200
     else
       render :json=> {:success=>false, :message=>"Error with your login or password"}, :status=>401
     end
