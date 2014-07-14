@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      render :json=> {:success=>true, :email=>user.email, :user_id=>user.id}, :status=>200
+      render :json=> {:success=>'ok', :email=>user.email, :user_id=>user.id}, :status=>200
     else
       render :json=> {:success=>false, :message=>"Error with your login or password"}, :status=>401
     end
@@ -14,6 +14,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    render :json => {:success=>true}, :status=>204
+    render :json => {:success=>'ok'}, :status=>204
   end
 end
