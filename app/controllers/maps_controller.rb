@@ -3,6 +3,12 @@ class MapsController < ApplicationController
                      :if => Proc.new { |c| c.request.format == 'application/json' }
   respond_to :json
 
+  def show
+    maps = Map.where("user_id = #{params[:id]}")
+    # maps = Map.find(params[:id])
+    render :json => maps.to_json(:include => :pins)
+  end
+
   def create
     map = Map.create(map_params)
     respond_with map

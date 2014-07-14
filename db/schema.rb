@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140712224722) do
+ActiveRecord::Schema.define(version: 20140714000713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140712224722) do
   create_table "maps", force: true do |t|
     t.string   "name"
     t.integer  "creator_id"
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.float    "map_lat"
     t.float    "map_long"
     t.datetime "created_at"
