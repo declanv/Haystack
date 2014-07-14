@@ -5,11 +5,10 @@ FactoryGirl.define do
     password_salt "$2a$10$NMs7y/Q6U7zgjfE/vLHM7u"
     username "bigfakeone"
     avatar "http://img25.photobucket.com/albums/v75/Evil_Vin/clp27.jpg"
-    username "fakepersonone"
 
       factory :user_with_map do
         after(:create) do |user|
-          create(:map_with_pin, creator_id: user.id, owner_id: user.id)
+          create(:map_with_pin, creator_id: user.id, user_id: user.id)
         end
       end
   end
