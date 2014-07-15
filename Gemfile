@@ -38,6 +38,8 @@ end
 
 gem 'factory_girl_rails'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
