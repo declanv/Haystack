@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :maps
   resources :sessions, only: [:create]
+  match 'sessions', to: 'sessions#create', via: [:options]
 end
 
 #   log_out GET    /log_out(.:format)        sessions#destroy
