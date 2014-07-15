@@ -4,12 +4,15 @@ class SessionsController < ApplicationController
   respond_to :jsonp
 
   def create
+    puts "inside create"
     user = User.authenticate(params[:email], params[:password])
     if user
+      puts "inside if user"
       session[:user_id] = user.id
       render :json => {:success=>'ok', :email=>user.email, :user_id=>user.id}, :callback => params['callback'], :status=>200
     else
-      render :json=> {:success=>false, :message=>"Error with your login or password"}, :callback => params['callback']}, :status=>401
+      puts "inside else"
+      render :json=> {:success=>false, :message=>"Error with your login or password"}, :callback => params['callback'], :status=>401
 
     end
   end
