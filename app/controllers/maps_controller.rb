@@ -1,12 +1,14 @@
 class MapsController < ApplicationController
-  skip_before_filter :verify_authenticity_token,
-                     :if => Proc.new { |c| c.request.format == 'application/json' }
+  # skip_before_filter :verify_authenticity_token,
+  #                    :if => Proc.new { |c| c.request.format == 'application/json' }
+  skip_before_filter :verify_authenticity_token
+
   respond_to :json
 
   def show
     maps = Map.where("user_id = #{params[:id]}")
     # maps = Map.find(params[:id])
-    render :json => maps.to_json(:include => :pins)
+    render :json => maps.to_json(:include => :pins), :callback => params['callback']
   end
 
   def create
