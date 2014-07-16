@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(params[:email], params[:password], params[:password_confirmation])
     if @user.save
       render :json=> {:success=>true, :email=>@user.email, :id=>@user.id}, :callback => params['callback'], :status => 200
     else
