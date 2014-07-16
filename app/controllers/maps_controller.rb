@@ -5,7 +5,7 @@ class MapsController < ApplicationController
 
   respond_to :json
 
-  def show
+  def index
     maps = Map.where("user_id = #{params[:id]}")
     # maps = Map.find(params[:id])
     render :json => maps.to_json(:include => :pins), :callback => params['callback']
