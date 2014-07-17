@@ -12,8 +12,9 @@ class MapsController < ApplicationController
   end
 
   def create
+    puts map_params
     map = Map.create(map_params)
-    respond_with map
+    render :json => map.to_json, :callback => params['callback']
   end
 
   def update
@@ -24,7 +25,7 @@ class MapsController < ApplicationController
   end
 
   def map_params
-    params.require(:map).permit(:name, :creator_id, :owner_id, :map_lat, :map_long)
+    params.require(:map).permit(:name, :creator_id, :user_id, :map_lat, :map_long)
   end
 end
 
