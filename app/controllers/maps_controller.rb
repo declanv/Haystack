@@ -24,6 +24,12 @@ class MapsController < ApplicationController
     # respond_with map
   end
 
+  def destroy
+    map = Map.find(params[:id])
+    map.destroy
+    render :json => {:success=>'ok'}, :status=>204
+  end
+
   def map_params
     params.require(:map).permit(:name, :creator_id, :user_id, :map_lat, :map_long)
   end
