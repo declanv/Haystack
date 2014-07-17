@@ -50,7 +50,7 @@ Pin.create({
   name: "hot dog on a stick",
   description: "its nice",
   photo_url: "http://vinniesnewyorkpizza.com/images/web/walloffame.jpg",
-  pin_lat: pin_lat: 40.7066689811733,
+  pin_lat: 40.7066689811733,
   pin_long: -74.1810607910156
 })
 
@@ -59,7 +59,7 @@ Pin.create({
   name: "fred flinstone's house",
   description: "its nice",
   photo_url: "http://vinniesnewyorkpizza.com/images/web/walloffame.jpg",
-  pin_lat: pin_lat: 40.6952166135172,
+  pin_lat: 40.6952166135172,
   pin_long: -74.3980407714844
 })
 
@@ -68,7 +68,7 @@ Pin.create({
   name: "juice bar",
   description: "its nice",
   photo_url: "http://vinniesnewyorkpizza.com/images/web/walloffame.jpg",
-  pin_lat: pin_lat: 40.7569774907177,
+  pin_lat: 40.7569774907177,
   pin_long: -73.9853668212891
 })
 
@@ -77,7 +77,7 @@ Pin.create({
   name: "a dog walk",
   description: "its nice",
   photo_url: "http://vinniesnewyorkpizza.com/images/web/walloffame.jpg",
-  pin_lat: pin_lat: 40.7424124233837,
+  pin_lat: 40.7424124233837,
   pin_long: -73.9826202392578
 })
 
