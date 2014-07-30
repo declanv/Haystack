@@ -6,6 +6,7 @@ class PinsController < ApplicationController
   def create
     pin = Pin.create(pin_params)
     respond_with pin
+    # Comment to see if I can commmit
   end
 
   def pin_params
