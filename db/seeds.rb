@@ -27,12 +27,11 @@ map = Map.create({
   map_long: -73.9896807
 })
 
-pin_one = Pin.create({
+Pin.create({
   map_id: map.id,
   name: "vinnies pizza",
   description: "good pizza",
   photo_url: "http://vinniesnewyorkpizza.com/images/web/walloffame.jpg",
-  pin_lat: 40.77118185975647,
-  pin_long: -74.1796875
+  pin_lat: 40.6848036615912,
+  pin_long: -73.9215087890625
 })
-
