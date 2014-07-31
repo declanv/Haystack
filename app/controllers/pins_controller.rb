@@ -3,6 +3,11 @@ class PinsController < ApplicationController
 
   respond_to :json
 
+  def index
+    pins = Pin.all
+    render :json => pins.to_json, :callback => params['callback']
+  end
+
   def create
     puts pin_params
     pin = Pin.create(pin_params)
