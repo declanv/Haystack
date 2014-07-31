@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "sign_up" => "users#create", :as => "sign_up"
   resources :users
   resources :maps
+  resources :pins
   resources :sessions, only: [:create]
   match 'sessions', to: 'sessions#create', via: [:options]
 end
